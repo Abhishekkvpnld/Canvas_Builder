@@ -22,9 +22,9 @@ app.use(morgan("dev"));
 app.use("/canvas", canvas);
 app.use("/", (req, res) => {
   res.send("server running....");
-});
+}); 
 
-
+   
 const PORT = process.env.PORT;
 
 dbConnection().then(() => {
