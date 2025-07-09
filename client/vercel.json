@@ -3,7 +3,6 @@
     { "src": "/", "dest": "/" },
     { "src": "/saved", "dest": "/" },
     { "src": "/canvas", "dest": "/" },
-
   ]
 }
   
