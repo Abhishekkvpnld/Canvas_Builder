@@ -5,8 +5,15 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
+    //handle reset function
+    const handleReset = () => {
+        const confirmReset = window.confirm("Do you want to create a new canvas?");
+        if (confirmReset) {
+            navigate("/");
+        }
+    };
     return (
-        <div className="relative shadow-2xl mt-4 px-4 py-2 flex items-center justify-between rounded-full w-[90%] bg-blue-600">
+        <div className="relative shadow-2xl mt-2 px-4 py-2 flex items-center justify-between rounded-full w-[90%] bg-blue-600">
             {/* Left side - Canvas title */}
             <h1
                 onClick={() => navigate("/")}
@@ -17,10 +24,10 @@ const Navbar = () => {
 
             {/* Right side - Saved & New options */}
             <div className="flex items-center gap-8">
-                <h1 className="font-semibold text-white hover:scale-105 hover:font-bold transition duration-300 cursor-pointer">
+                <h1 onClick={()=>navigate("/saved")} className="font-semibold text-white hover:scale-105 hover:font-bold transition duration-300 cursor-pointer">
                     Saved
                 </h1>
-                <h1 className="font-semibold text-white hover:scale-110 hover:font-bold transition duration-300 cursor-pointer">
+                <h1 onClick={handleReset} className="font-semibold text-white hover:scale-110 hover:font-bold transition duration-300 cursor-pointer">
                     New
                 </h1>
             </div>
